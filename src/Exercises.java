@@ -4,6 +4,9 @@ public class Exercises {
 		if (a == null || a.length == 0 || b == null || b.length == 0) {
 			return false;
 		}
+		if (a[0] == b[0] || a[a.length - 1] == b[b.length - 1]) {
+			return true;
+		}
 		
 		// write your code here
 		
