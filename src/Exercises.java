@@ -158,7 +158,13 @@ public class Exercises {
 		}
 		boolean isConsecutive = false;
 		
-		return false;	// default return value to ensure compilation
+		for (int i = 2; i < numbers.length; i++) {
+			if (numbers[i] % 2 == numbers[i-1] % 2 && numbers[i] % 2 == numbers[i-2] % 2) {
+				isConsecutive = true;
+			}
+		}
+
+		return isConsecutive;
 	}
 	
 	public boolean balance(int[] numbers) {
