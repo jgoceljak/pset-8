@@ -174,6 +174,16 @@ public class Exercises {
 		for (int i = 0; i < numbers.length; i++) {
 			int firstSum = 0;
 			int secondSum = 0;
+			for (int j = 0; j < i; j++) {
+				firstSum += numbers[j];
+			}
+			for (int k = i; k < numbers.length; k++) {
+				secondSum += numbers[k];
+			}
+			if (firstSum == secondSum) {
+				return true;
+			}
+		}
 		
 		return false;	// default return value to ensure compilation
 	}
