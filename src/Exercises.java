@@ -60,28 +60,39 @@ public class Exercises {
 	}
 	
 	public double biggest(double[] numbers) {
+		String empty[] = new String[0]; 
 		if (numbers == null || numbers.length < 3 || numbers.length%2 == 0) {
 			return -1;
 		}
-		
 		int midIndex = (int)(Math.ceil(numbers.length / 2));
 		double max = -1;
 		for (int i = 0; i < numbers.length; i++) {
 			if (numbers[i] < 0) {
 				return -1;
-			}
-
+		}
 			if ((i == 0 || i == numbers.length - 1 || i == midIndex) && numbers[i] > max) {
 				max = numbers[i];
 			}
-		}
-		
+		   }	
 		return max;
 	}
 	
 	
 	public String[] middle(String[] values) {
-		// write your code here
+		if (values == null || values.length < 3 || values.length%2 == 0) {
+			return empty;
+		}
+		
+		//check that no null condition is met
+		boolean containsNull = false;
+		for (int i = 0; i < values.length; i++) {
+			if (values[i] == null) {
+				containsNull = true;
+			}
+		}
+		if (containsNull) {
+			return empty;
+		}
 		
 		return null;	// default return value to ensure compilation
 	}
