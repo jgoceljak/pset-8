@@ -41,25 +41,22 @@ public class Exercises {
 		if (numbers == null || numbers.length < 1) {
 			return -1;
 		}
-		int max = 0;
-		int min = 0;
+
+		int largest = numbers[0];
+		int smallest = numbers[0];
+
 		for (int i = 0; i < numbers.length; i++) {
-			if (i == 0) {
-				min = numbers[i];
-				max = numbers[i];
+			if (numbers[i] > largest) {
+				largest = numbers[i];
 			}
-			if (max < numbers[i]) {
-				max = numbers[i];
-			}
-			if (min > numbers[i]) {
-				min = numbers[i];
+			if (numbers[i] < smallest) {
+				smallest = numbers[i];
 			}
 		}
+	   int difference = largest - smallest;
+		return difference;
 		
-		return max - min;
-	
-		
-		return -1;		// default return value to ensure compilation
+		//return -1;
 	}
 	
 	public double biggest(double[] numbers) {
