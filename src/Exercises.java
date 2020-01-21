@@ -79,22 +79,26 @@ public class Exercises {
 	
 	
 	public String[] middle(String[] values) {
-		if (values == null || values.length < 3 || values.length%2 == 0) {
-			return empty;
-		}
-		
-		//check that no null condition is met
-		boolean containsNull = false;
-		for (int i = 0; i < values.length; i++) {
-			if (values[i] == null) {
-				containsNull = true;
-			}
-		}
-		if (containsNull) {
-			return empty;
-		}
-		
-		return null;	// default return value to ensure compilation
+
+				String empty[] = new String[0]; 
+				if (values == null || values.length < 3 || values.length%2 == 0) {
+					return empty;
+				}
+				boolean containsNull = false;
+				for (int i = 0; i < values.length; i++) {
+					if (values[i] == null) {
+						containsNull = true;
+					}
+				}
+				if (containsNull) {
+					return empty;
+				}
+				int middle = values.length / 2;
+				int first = middle-1;
+				int last = middle+1;
+
+				String[] result = {values[first], values[middle], values[last]};
+				return result;
 	}
 
 	public boolean increasing(int[] numbers) {
