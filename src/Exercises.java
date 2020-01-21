@@ -106,10 +106,22 @@ public class Exercises {
 			return false;
 		}
 
-		//initialize sequence vars
-		int lowestNum = numbers[0];
-		int middleNum = numbers[1];
-		int finalNum = numbers[2];
+		int lowest = numbers[0];
+		int middle = numbers[1];
+		int last = numbers[2];
+		for (int i = 0; i < numbers.length; i++) {
+			if (lowest < middle && middle < last) {
+				return true;
+			}
+			if (i + 2 < numbers.length) {
+				lowest = numbers[i];
+				middle = numbers[i + 1];
+				last = numbers[i + 2];
+			} else {
+				return false;
+		}
+		}
+		
 		
 		return false;	// default return value to ensure compilation
 	}
