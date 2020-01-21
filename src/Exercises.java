@@ -102,7 +102,14 @@ public class Exercises {
 	}
 
 	public boolean increasing(int[] numbers) {
-		// write your code here
+		if (numbers == null || numbers.length < 3) {
+			return false;
+		}
+
+		//initialize sequence vars
+		int lowestNum = numbers[0];
+		int middleNum = numbers[1];
+		int finalNum = numbers[2];
 		
 		return false;	// default return value to ensure compilation
 	}
