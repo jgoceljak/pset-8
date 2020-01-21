@@ -197,7 +197,22 @@ public class Exercises {
 				return -1;
 			}
 		}
-		
-		return -1;		// default return value to ensure compilation
+		boolean same = false;
+		boolean prevSame = false;
+		String previous = "";
+		int clumps = 0;
+		for (int i = 0; i < values.length; i++) {
+			if (previous.equals(values[i])) {
+				same = true;
+				if (prevSame != true) {
+					clumps++;
+				} 
+			} else {
+				same = false;
+			}
+			previous = values[i];
+			prevSame = same;
+		}		
+		return clumps;
 	}
 }
