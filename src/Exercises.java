@@ -153,7 +153,10 @@ public class Exercises {
 		
 	
 	public boolean consecutive(int[] numbers) {
-		// write your code here
+		if (numbers == null || numbers.length < 3) {
+			return false;
+		}
+		boolean isConsecutive = false;
 		
 		return false;	// default return value to ensure compilation
 	}
