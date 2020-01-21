@@ -14,13 +14,50 @@ public class Exercises {
 	}
 	
 	public String[] endsMeet(String[] values, int n) {
-		// write your code here
-		
-		return null;	// default return value to ensure compilation
+		if (values == null || values.length < n || n <= 0) {
+			return new String[0];
+		}
+		String empty[] = new String[0]; 
+
+
+		if (values == null || values.length < n || n < 0) {
+			return empty; 
+		}
+		String result[] = new String[n*2];
+		int length = values.length;
+		int index = n;
+
+		for (int i = 0; i < n; i++) {
+			result[i] = values[i];
+		}
+		for (int j = n; j < 2*n; j++) {
+			result[j] = values[length-index];
+			index--;
+		}
+		return result;	// default return value to ensure compilation
 	}
 	
 	public int difference(int[] numbers) {
-		// write your code here
+		if (numbers == null || numbers.length < 1) {
+			return -1;
+		}
+		int max = 0;
+		int min = 0;
+		for (int i = 0; i < numbers.length; i++) {
+			if (i == 0) {
+				min = numbers[i];
+				max = numbers[i];
+			}
+			if (max < numbers[i]) {
+				max = numbers[i];
+			}
+			if (min > numbers[i]) {
+				min = numbers[i];
+			}
+		}
+		
+		return max - min;
+	
 		
 		return -1;		// default return value to ensure compilation
 	}
